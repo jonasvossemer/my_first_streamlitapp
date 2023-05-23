@@ -25,13 +25,13 @@ if st.sidebar.checkbox('Show dataframe'):
 
 # Then the radio botton for the plot type
 show_plot = st.sidebar.radio(
-    label='Choose Plot type', options=['Matplotlib', 'Plotly'])
+    label='Choose a plot type', options=['Matplotlib', 'Plotly'])
 
 st.header("Highway Fuel Efficiency")
 years = ["All"] + sorted(pd.unique(df['year']))
 year = st.sidebar.selectbox("Choose a year", years) # Here the selection of the year.
 car_classes = ['All'] + sorted(pd.unique(df['class']))
-car_class = st.sidebar.selectbox("choose a Class", car_classes) # Here the selection of the class.
+car_class = st.sidebar.selectbox("Choose a Class", car_classes) # Here the selection of the class.
 
 show_means = st.sidebar.radio(
     label='Show Class Means', options=['Yes', 'No'])
@@ -80,3 +80,4 @@ if show_plot == 'Plotly':
     
 else:
     st.pyplot(mpg_mpl(year, car_class, show_means))
+    
